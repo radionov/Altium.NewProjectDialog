@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="LinkButtonColor" Color="#FF1197DE"/>
+    <SolidColorBrush x:Key="MainBackgroundColorLight" Color="#2D2D30" />
+    <SolidColorBrush x:Key="MainBackgroundColorDark" Color="#252526" />
+    <SolidColorBrush x:Key="MainForegroundColor" Color="#FFF1F1F1"/>
+
+    <SolidColorBrush x:Key="ComboBoxBorderColor" Color="#434346"/>
+    <SolidColorBrush x:Key="ComboBoxBackgroundColor" Color="#333337"/>
+    <SolidColorBrush x:Key="ComboBoxBackgroundMouseOverColor" Color="#3F3F46"/>
+    
+    
+</ResourceDictionary>

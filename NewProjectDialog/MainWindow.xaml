@@ -1,0 +1,107 @@
+﻿<Window x:Class="Altium.NewProjectDialog.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:UserControls="clr-namespace:Altium.NewProjectDialog.UserControls"
+        xmlns:local="clr-namespace:Altium.NewProjectDialog"
+        mc:Ignorable="d"
+        Height="582"
+        Width="955"
+        MinHeight="450"
+        MinWidth="800"
+        Background="{StaticResource MainBackgroundColorDark}"
+        Title="MainWindow">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition  Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition Width="4"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!--<ContentControl Grid.Column="0" Content="{Binding Navigation, Mode=OneWay}"/>-->
+            <UserControls:TreeViewControl x:Name="NavigationControl" Grid.Column="0"></UserControls:TreeViewControl>
+            
+            <!--<ContentControl Grid.Column="2" Content="{Binding Converter}"/>-->
+
+            <!--<ContentControl Grid.Column="2" Content="{Binding Content1, Mode=OneWay}"/>-->
+            <UserControls:TreeContentControl x:Name="ContentControl" Grid.Column="2"></UserControls:TreeContentControl>
+
+            
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MinWidth="120" Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition MinWidth="272" Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="3"/>
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" 
+                   Grid.Column="0" 
+                   Margin="7,0,0,0"
+                   Content="Name:"/>
+            <Label Grid.Row="1" 
+                   Grid.Column="0" 
+                   Margin="7,0,0,0"
+                   Content="Location:"/>
+            <Label Grid.Row="2" 
+                   Grid.Column="0" 
+                   Margin="7,0,0,0"
+                   Content="Solution:"/>
+            <Label Grid.Row="3" 
+                   Grid.Column="0" 
+                   Margin="7,0,0,0"
+                   Content="Solution name:"/>
+
+            <TextBox Grid.Row="0" 
+                     Grid.Column="1" 
+                     Text="ConsoleApplication1"/>
+
+            <ComboBox Grid.Row="1" 
+                      Grid.Column="1" 
+                      IsEditable="True"
+                      Text="c:\users\radionov\documents\visual studio 2015\Projects"/>
+
+            <ComboBox Grid.Row="2" 
+                      Grid.Column="1" 
+                      ItemsSource="{Binding SolutionSelectTypes, Mode=TwoWay}" 
+                      SelectedItem="{Binding SelectedSolutionTypes, Mode=TwoWay}" 
+                      DisplayMemberPath="Name" 
+                      Padding="2" />
+
+            <TextBox Grid.Row="3" 
+                     Grid.Column="1" 
+                     IsEnabled="{Binding ElementName=cbCreateDirectory, Path=IsChecked}"
+                     Text="ConsoleApplication1"/>
+
+            <Button Grid.Row="1" Grid.Column="2" Content="Browse" MinWidth="85" Margin="14,0,6,0" HorizontalAlignment="Left"/>
+            <CheckBox Grid.Row="3" Grid.Column="2" Content="Create directory for solution" IsChecked="True" Margin="14,0,6,0" x:Name="cbCreateDirectory"/>
+            <CheckBox Grid.Row="4" Grid.Column="2" Content="Add to source control" Margin="14,0,6,0"/>
+        </Grid>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="OK" Margin="0,3,6,6" MinWidth="75"/>
+            <Button Content="Cancel" Margin="0,3,12,6" MinWidth="75"/>
+        </StackPanel>
+    </Grid>
+</Window>
