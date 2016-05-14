@@ -8,6 +8,16 @@
     <SolidColorBrush x:Key="ComboBoxBorderColor" Color="#434346"/>
     <SolidColorBrush x:Key="ComboBoxBackgroundColor" Color="#333337"/>
     <SolidColorBrush x:Key="ComboBoxBackgroundMouseOverColor" Color="#3F3F46"/>
+
+    <SolidColorBrush x:Key="ListViewItemSelectedNotActive" Color="#3F3F46"/>
+
+    <SolidColorBrush x:Key="ScrollBarThumbBackgroundColor" Color="#686868"/>
+    <SolidColorBrush x:Key="ScrollBarThumbMouseOverBackgroundColor" Color="#9E9E9E"/>
+    <SolidColorBrush x:Key="ScrollBarRepeatButtonBackgroundColor" Color="#999999"/>
+    <SolidColorBrush x:Key="ScrollBarBackgroundColor" Color="#3E3E42"/>
     
+
     
+
+
 </ResourceDictionary>

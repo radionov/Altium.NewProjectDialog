@@ -3,3 +3,7 @@
 ################################################################################
 
 *.suo
+/NewProjectDialog/bin/Debug
+/NewProjectDialog/obj/Debug
+/packages
+*.user

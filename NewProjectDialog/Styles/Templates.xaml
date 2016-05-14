@@ -36,4 +36,23 @@
 
         </TreeView>
     </DataTemplate>
+
+    <!--<DataTemplate x:Name="ListViewContentTemplate" DataType="{x:Type models:ListViewContent}">
+        <ListView>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="38"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Source="{Binding Image}"/>
+                        <TextBlock Grid.Column="1" Text="{Binding Text1}"/>
+                        <TextBlock Grid.Column="2" Text="{Binding Text2}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </DataTemplate>-->
 </ResourceDictionary>

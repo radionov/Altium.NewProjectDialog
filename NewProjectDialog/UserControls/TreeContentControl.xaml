@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Altium.NewProjectDialog.UserControls"
+             xmlns:models="clr-namespace:Altium.NewProjectDialog.Models"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Background="#FF2D2D30">
@@ -22,15 +23,28 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="256"/>
             </Grid.ColumnDefinitions>
 
             <ComboBox Grid.Column="0" Width="150" ItemsSource="{Binding Frameworks}" SelectedItem="{Binding SelectedFramework}" DisplayMemberPath="Name" />
             <Label Grid.Column="1" Content="Sort by:"/>
             <ComboBox Grid.Column="2" Width="160" ItemsSource="{Binding SortByItems}" SelectedItem="{Binding SelectedSortByItem}" DisplayMemberPath="Name"/>
             <ToggleButton Grid.Column="3" Style="{StaticResource ChangeSizeToggleButton}"/>
-            <TextBox Grid.Column="4" Width="246" MinWidth="139" Margin="4,0" Text="Search Installed Templates (Ctrl+E)" HorizontalAlignment="Right"/>
+            <!--<TextBox Grid.Column="4" Width="246" MinWidth="139" Margin="4,0" Text="Search Installed Templates (Ctrl+E)" HorizontalAlignment="Right"/>-->
+            <TextBox Grid.Column="4" Width="248"  VerticalAlignment="Center" HorizontalAlignment="Right" x:Name="SearchTermTextBox" Margin="4,0"/>
+            <TextBlock Grid.Column="4" Width="248" IsHitTestVisible="False" Text="Search Installed Templates (Ctrl+E)" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0" Foreground="DarkGray">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=SearchTermTextBox}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
         </Grid>
         
         <Grid Grid.Row="1" Grid.Column="1">
@@ -40,7 +54,28 @@
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0" Background="{StaticResource MainBackgroundColorDark}">
-                
+                <ListView Background="{DynamicResource MainBackgroundColorDark}" Foreground="{DynamicResource MainForegroundColor}" BorderThickness="0" ItemsSource="{Binding ListViewContentItems}" >
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate DataType="{x:Type models:ListViewContent}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="38"/>
+                                    <ColumnDefinition Width="*" MinWidth="80"/>
+                                    <ColumnDefinition Width="60" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="{Binding Image}" Height="32" Margin="0,2,4,2"/>
+                                <TextBlock Grid.Column="1" Text="{Binding Text1}" VerticalAlignment="Center" Margin="8,0,0,0"/>
+                                <TextBlock Grid.Column="2" Text="{Binding Text2}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </Grid>
             
             <Grid Grid.Row="1">

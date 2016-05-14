@@ -38,6 +38,21 @@ namespace Altium.NewProjectDialog.ViewModels
                 });
 
             SelectedSortByItem = SortByItems[0];
+
+            ListViewContentItems = new ObservableCollection<ListViewContent>(new List<ListViewContent>
+            {
+                new ListViewContent { Image="/Images/wpf.png", Text1 = "Windows Forms Application", Text2 = "Visual C#"},
+                new ListViewContent { Image="/Images/wpf.png", Text1 = "WPF Application", Text2 = "Visual C#"},
+                new ListViewContent { Image="/Images/wpf.png", Text1 = "Console Application", Text2 = "Visual C#"},
+                new ListViewContent { Image="/Images/wpf.png", Text1 = "Shared Project", Text2 = "Visual C#"},
+                new ListViewContent { Image="/Images/wpf.png", Text1 = "Class Library (Portable for iOS, Android and Windows)", Text2 = "Visual C#"},
+                new ListViewContent { Image="/Images/wpf.png", Text1 = "Class Library", Text2 = "Visual C#"},
+                new ListViewContent { Image="/Images/wpf.png", Text1 = "Class Library (Portable)", Text2 = "Visual C#"},
+
+                new ListViewContent { Image="/Images/wpf.png", Text1 = "Class Library (Portable for iOS, Android and Windows)", Text2 = "Visual C#"},
+                new ListViewContent { Image="/Images/wpf.png", Text1 = "Class Library", Text2 = "Visual C#"},
+                new ListViewContent { Image="/Images/wpf.png", Text1 = "Class Library (Portable)", Text2 = "Visual C#"},
+            });
         }
 
         public void Navigation_SelectedChanged(object sender, NavigationTreeItem e)
@@ -87,6 +102,17 @@ namespace Altium.NewProjectDialog.ViewModels
             {
                 _selectedSortByItem = value;
                 RaisePropertyChanged(() => SelectedSortByItem);
+            }
+        }
+
+        private ObservableCollection<ListViewContent> _listViewContentItems;
+        public ObservableCollection<ListViewContent> ListViewContentItems
+        {
+            get { return _listViewContentItems; }
+            set
+            {
+                _listViewContentItems = value;
+                RaisePropertyChanged(() => ListViewContentItems);
             }
         }
     }

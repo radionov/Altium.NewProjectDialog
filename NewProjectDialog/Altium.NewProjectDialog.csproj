@@ -63,6 +63,7 @@
       <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PresentationFramework.Aero" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -89,6 +90,7 @@
     </ApplicationDefinition>
     <Compile Include="CompositionRoot\DependenciesRegistrator.cs" />
     <Compile Include="Models\BaseItem.cs" />
+    <Compile Include="Models\ListViewContent.cs" />
     <Compile Include="Models\NavigationTreeItem.cs" />
     <Compile Include="UserControls\TreeContentControl.xaml.cs">
       <DependentUpon>TreeContentControl.xaml</DependentUpon>
@@ -119,7 +121,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\NavigationTreeView.xaml">
+    <Page Include="Styles\Templates.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -163,6 +165,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\wpf.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

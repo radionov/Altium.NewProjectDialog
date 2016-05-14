@@ -7,7 +7,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/Overrided.xaml" />
-                <ResourceDictionary Source="Styles/NavigationTreeView.xaml" />
+                <ResourceDictionary Source="Styles/Templates.xaml" />
                 <ResourceDictionary Source="Styles/KeyStyles.xaml" />
                 <ResourceDictionary Source="Styles/Constants.xaml" />
             </ResourceDictionary.MergedDictionaries>
