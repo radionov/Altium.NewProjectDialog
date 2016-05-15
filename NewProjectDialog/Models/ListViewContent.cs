@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GalaSoft.MvvmLight;
 
 namespace Altium.NewProjectDialog.Models
 {
@@ -11,5 +7,6 @@ namespace Altium.NewProjectDialog.Models
         public string Image { get; set; }
         public string Text1 { get; set; }
         public string Text2 { get; set; }
+        public string RightContentText { get; set; }
     }
 }

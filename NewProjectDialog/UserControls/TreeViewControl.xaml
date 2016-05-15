@@ -8,7 +8,7 @@
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:command="http://www.galasoft.ch/mvvmlight"
              mc:Ignorable="d">
-    <TreeView ItemsSource="{Binding Path=RootItems, Mode=TwoWay}">
+    <TreeView ItemsSource="{Binding Path=RootItems, Mode=TwoWay}" Margin="0,6,0,0">
         <TreeView.ItemTemplate>
             <HierarchicalDataTemplate ItemsSource="{Binding Items, Mode=TwoWay}">
                 <StackPanel Orientation="Horizontal" Height="15">
@@ -21,11 +21,8 @@
             <Style TargetType="{x:Type TreeViewItem}">
                 <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
                 <Setter Property="FontWeight" Value="Normal" />
-                <Style.Triggers>
-                    <Trigger Property="IsSelected" Value="True">
-                        <Setter Property="FontWeight" Value="Bold" />
-                    </Trigger>
-                </Style.Triggers>
+                <Setter Property="Foreground" Value="{DynamicResource MainForegroundColor}"/>
+                <Setter Property="Margin" Value="0,2"/>
             </Style>
         </TreeView.ItemContainerStyle>
         <i:Interaction.Triggers>

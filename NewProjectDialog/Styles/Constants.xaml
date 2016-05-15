@@ -15,9 +15,4 @@
     <SolidColorBrush x:Key="ScrollBarThumbMouseOverBackgroundColor" Color="#9E9E9E"/>
     <SolidColorBrush x:Key="ScrollBarRepeatButtonBackgroundColor" Color="#999999"/>
     <SolidColorBrush x:Key="ScrollBarBackgroundColor" Color="#3E3E42"/>
-    
-
-    
-
-
 </ResourceDictionary>

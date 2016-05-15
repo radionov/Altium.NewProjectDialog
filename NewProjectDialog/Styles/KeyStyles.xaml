@@ -17,9 +17,6 @@
     </Style>
 
     <Style x:Key="ChangeSizeToggleButton" BasedOn="{x:Null}" TargetType="{x:Type ToggleButton}">
-        <!--<Setter Property="OverridesDefaultStyle" Value="True"/>-->
-        <!--<Setter Property="Width" Value="26"/>
-        <Setter Property="Height" Value="26"/>-->
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="True">
@@ -45,8 +42,6 @@
                         </Rectangle>
                     </Setter.Value>
                 </Setter>
-                <!--<Setter Property="BorderBrush" Value="Blue"/>
-                <Setter Property="BorderThickness" Value="1"/>-->
             </Trigger>
 
             <Trigger Property="IsChecked" Value="False">
@@ -74,35 +69,61 @@
                 </Setter>
             </Trigger>
         </Style.Triggers>
-        <!--<Setter Property="Foreground" Value="#F1F1F1"/>
-        <Setter Property="Background" Value="#3F3F46"/>
-        <Setter Property="Padding" Value="2"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="ToggleButton">
-                    <Rectangle Width="16" Height="16">
-                        <Rectangle.Fill>
-                            <DrawingBrush>
-                                <DrawingBrush.Drawing>
-                                    <DrawingGroup>
-                                        <DrawingGroup.Children>
-                                            <GeometryDrawing Brush="#00FFFFFF" Geometry="F1M16,16L0,16 0,0 16,0z" />
-                                            <GeometryDrawing Brush="#FFF6F6F6" Geometry="F1M0,-0.000199999999999534L0,15.9998 6,15.9998 6,14.9998 16,14.9998 16,10.9998 6,10.9998 6,9.9998 16,9.9998 16,5.9998 6,5.9998 6,4.9998 16,4.9998 16,0.9998 6,0.9998 6,-0.000199999999999534z" />
-                                            <GeometryDrawing Brush="#FF424242" Geometry="F1M7,7L15,7 15,9 7,9z M2,7L4,7 4,9 2,9z M1,10L5,10 5,6 1,6z M7,12L15,12 15,14 7,14z M2,2L4,2.001 4,4 2,4z M1,5L5,5 5,1 1,1z M15,4L7,4 7,2 15,2z M2,12L4,12 4,14 2,14z M1,15L5,15 5,11 1,11z" />
-                                            <GeometryDrawing Brush="#FFF0EFF1" Geometry="F1M4,12L2,12 2,14 4,14z M4,7L2,7 2,9 4,9z M4,4L2,4 2,2 4,2z" />
-                                        </DrawingGroup.Children>
-                                    </DrawingGroup>
-                                </DrawingBrush.Drawing>
-                            </DrawingBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="BorderBrush" Value="Red"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>-->
+    </Style>
+
+    <Style x:Key="ToggleButton1" BasedOn="{x:Null}" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Width" Value="22"/>
+        <Setter Property="Height" Value="22"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Content">
+                    <Setter.Value>
+                        <Image Source="/Images/toggle1active.png"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+
+            <Trigger Property="IsChecked" Value="False">
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Content">
+                    <Setter.Value>
+                        <Image Source="/Images/toggle1.png"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <Style x:Key="ToggleButton2" BasedOn="{x:Null}" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Width" Value="22"/>
+        <Setter Property="Height" Value="22"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Content">
+                    <Setter.Value>
+                        <Image Source="/Images/toggle2active.png"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+
+            <Trigger Property="IsChecked" Value="False">
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Content">
+                    <Setter.Value>
+                        <Image Source="/Images/toggle2.png"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 </ResourceDictionary>

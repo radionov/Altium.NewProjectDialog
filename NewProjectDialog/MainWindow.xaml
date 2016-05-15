@@ -26,16 +26,9 @@
                 <ColumnDefinition Width="0"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            
-            <!--<ContentControl Grid.Column="0" Content="{Binding Navigation, Mode=OneWay}"/>-->
-            <UserControls:TreeViewControl x:Name="NavigationControl" Grid.Column="0"></UserControls:TreeViewControl>
-            
-            <!--<ContentControl Grid.Column="2" Content="{Binding Converter}"/>-->
 
-            <!--<ContentControl Grid.Column="2" Content="{Binding Content1, Mode=OneWay}"/>-->
-            <UserControls:TreeContentControl x:Name="ContentControl" Grid.Column="2"></UserControls:TreeContentControl>
-
-            
+            <UserControls:TreeViewControl x:Name="NavigationControl" Grid.Column="0"/>
+            <UserControls:TreeContentControl x:Name="ContentControl" Grid.Column="2"/>
         </Grid>
 
         <Grid Grid.Row="2">
@@ -77,26 +70,39 @@
                      Grid.Column="1" 
                      Text="ConsoleApplication1"/>
 
-            <ComboBox Grid.Row="1" 
+            <TextBox Grid.Row="1" 
                       Grid.Column="1" 
-                      IsEditable="True"
-                      Text="c:\users\radionov\documents\visual studio 2015\Projects"/>
+                      Text="C:\users\radionov\documents\visual studio 2015\Projects"/>
 
             <ComboBox Grid.Row="2" 
                       Grid.Column="1" 
                       ItemsSource="{Binding SolutionSelectTypes, Mode=TwoWay}" 
                       SelectedItem="{Binding SelectedSolutionTypes, Mode=TwoWay}" 
-                      DisplayMemberPath="Name" 
-                      Padding="2" />
+                      DisplayMemberPath="Name" />
 
             <TextBox Grid.Row="3" 
                      Grid.Column="1" 
                      IsEnabled="{Binding ElementName=cbCreateDirectory, Path=IsChecked}"
                      Text="ConsoleApplication1"/>
 
-            <Button Grid.Row="1" Grid.Column="2" Content="Browse" MinWidth="85" Margin="14,0,6,0" HorizontalAlignment="Left"/>
-            <CheckBox Grid.Row="3" Grid.Column="2" Content="Create directory for solution" IsChecked="True" Margin="14,0,6,0" x:Name="cbCreateDirectory"/>
-            <CheckBox Grid.Row="4" Grid.Column="2" Content="Add to source control" Margin="14,0,6,0"/>
+            <Button Grid.Row="1" 
+                    Grid.Column="2" 
+                    Content="Browse" 
+                    Height="23"
+                    MinWidth="85" 
+                    Margin="14,0,0,0" 
+                    HorizontalAlignment="Left"
+                    Command="{Binding BrowseCommand}"/>
+            <CheckBox Grid.Row="3" 
+                      Grid.Column="2" 
+                      Content="Create directory for solution" 
+                      IsChecked="True" 
+                      Margin="14,0,6,0" 
+                      x:Name="cbCreateDirectory"/>
+            <CheckBox Grid.Row="4" 
+                      Grid.Column="2" 
+                      Content="Add to source control" 
+                      Margin="14,0,6,0"/>
         </Grid>
 
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">

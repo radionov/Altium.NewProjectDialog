@@ -1,24 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using GalaSoft.MvvmLight;
 using System.Collections.ObjectModel;
 using Altium.NewProjectDialog.Models;
+using GalaSoft.MvvmLight.Command;
+using System;
+using Microsoft.Win32;
+using System.Windows.Forms;
 
 namespace Altium.NewProjectDialog.ViewModels
 {
     public class MainVindowViewModel : ViewModelBase
     {
-        //private TreeViewViewModel _navigation;
-
         public MainVindowViewModel()
         {
-            //Navigation = new TreeViewViewModel();
-            //Content1 = new TreeContentViewModel();
-            //Navigation.SelectedChanged += Content1.Navigation_SelectedChanged;
-
             SolutionSelectTypes = new ObservableCollection<BaseItem>(new List<BaseItem>
             {
                 new BaseItem { ID = 1, Name = "Create new solution" },
@@ -27,13 +21,7 @@ namespace Altium.NewProjectDialog.ViewModels
             });
 
             SelectedSolutionTypes = SolutionSelectTypes[0];
-            
-            
         }
-
-        //public TreeViewViewModel Navigation { get; set; }
-
-        //public TreeContentViewModel Content1 { get; set; }
 
         private ObservableCollection<BaseItem> _solutionSelectTypes;
         public ObservableCollection<BaseItem> SolutionSelectTypes
@@ -47,6 +35,21 @@ namespace Altium.NewProjectDialog.ViewModels
         {
             get { return _selectedSolutionTypes; }
             set { _selectedSolutionTypes = value; }
+        }
+
+        RelayCommand _browseCommand;
+        public RelayCommand BrowseCommand
+        {
+            get
+            {
+                return _browseCommand ?? (_browseCommand = new RelayCommand(Browse));
+            }
+        }
+
+        private void Browse()
+        {
+            var dialog = new FolderBrowserDialog();
+            DialogResult result = dialog.ShowDialog();
         }
     }
 }
